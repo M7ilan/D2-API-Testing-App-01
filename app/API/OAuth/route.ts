@@ -5,6 +5,7 @@ export async function GET(request: Request) {
 	const code = searchParams.get("code");
 
 	if (code) {
+		console.log(code);
 		const options = {
 			method: "POST",
 			headers: {
