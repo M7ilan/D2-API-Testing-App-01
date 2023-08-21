@@ -19,10 +19,6 @@ export async function GET(request: Request) {
 		};
 
 		const res = await fetch("https://www.bungie.net/Platform/App/OAuth/token/", options);
-		return NextResponse.json({
-			code: { code },
-			res: { res },
-			Client_ID: process.env.CLIENT_ID,
-		});
+		return NextResponse.json({ res });
 	}
 }
