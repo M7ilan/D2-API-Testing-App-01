@@ -5,7 +5,6 @@ export async function GET(request: Request) {
 	const code = searchParams.get("code");
 
 	if (code) {
-		console.log(code);
 		const options = {
 			method: "POST",
 			headers: {
@@ -20,6 +19,9 @@ export async function GET(request: Request) {
 		};
 
 		const res = await fetch("https://www.bungie.net/Platform/App/OAuth/token/", options);
-		return NextResponse.json(res);
+		return NextResponse.json({
+			code: code,
+			res: res,
+		});
 	}
 }
