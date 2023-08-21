@@ -18,9 +18,7 @@ export async function GET(request: Request) {
 			}),
 		};
 
-		fetch("https://www.bungie.net/Platform/App/OAuth/token/", options)
-			.then((response) => response.json())
-			.then((response) => console.log(response))
-			.catch((err) => console.error(err));
+		const res = await fetch("https://www.bungie.net/Platform/App/OAuth/token/", options);
+		return NextResponse.json(res);
 	}
 }
